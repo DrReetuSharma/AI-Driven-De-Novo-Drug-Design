@@ -1,5 +1,5 @@
-# ML_python
-# AI-Driven Drug Design: Generating Novel Molecules with Desired Properties
+# AI-Driven Drug Design
+#### Generating Novel Molecules with Desired Properties
 
 ## Overview:
 This repository contains code and resources for utilizing AI-driven methods to design novel drug molecules with desired properties. Leveraging Generative Adversarial Networks (GANs) combined with reinforcement learning (RL) techniques, the goal is to generate diverse and high-quality drug candidates optimized for efficacy, selectivity, and pharmacokinetic profiles.
