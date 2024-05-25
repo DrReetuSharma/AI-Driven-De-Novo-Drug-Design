@@ -1,3 +1,5 @@
+#load and inspect the contents of these files adj_array.npy and features_array.npy as these are binary files and we cannot view them like text files
+
 import numpy as np
 
 # Load adj_array.npy and features_array.npy
