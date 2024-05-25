@@ -7,23 +7,6 @@ def load_data(file_path):
     """
     data = pd.read_csv(file_path)
     return data
-    
-def main():
-    # Load and preprocess the general dataset
-    input_file_path = 'data/dataset.csv'
-    data = load_data(input_file_path)
-    preprocessed_data, label_encoders = preprocess_data(data)
-    output_file_path = 'data/preprocessed_dataset.csv'
-    save_preprocessed_data(preprocessed_data, output_file_path)
-    print(f"Preprocessed data saved to {output_file_path}")
-    
-    # Preprocess molecular data to fingerprints
-    molecular_input_file = 'data/molecular_dataset.csv'
-    molecular_output_file = 'data/molecular_fingerprints.npy'
-    preprocess_molecular_data(molecular_input_file, molecular_output_file)
-    
-if __name__ == '__main__':
-    main()
 
 def preprocess_data(data):
     """
