@@ -1,4 +1,6 @@
 import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import Descriptors
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 def load_data(file_path):
@@ -7,6 +9,24 @@ def load_data(file_path):
     """
     data = pd.read_csv(file_path)
     return data
+
+def calculate_descriptors(smiles):
+    """
+    Calculate molecular descriptors using RDKit.
+    """
+    mol = Chem.MolFromSmiles(smiles)
+    if mol:
+        descriptors = {
+            'MolWt': Descriptors.MolWt(mol),
+            'LogP': Descriptors.MolLogP(mol),
+            'TPSA': Descriptors.TPSA(mol),
+            'NumRotatableBonds': Descriptors.NumRotatableBonds(mol),
+            'NumHDonors': Descriptors.NumHDonors(mol),
+            'NumHAcceptors': Descriptors.NumHAcceptors(mol)
+        }
+        return descriptors
+    else:
+        return None
 
 def preprocess_data(data):
     """
@@ -45,6 +65,22 @@ def main():
     # Load the dataset
     input_file_path = 'data/dataset.csv'
     data = load_data(input_file_path)
+    
+    # Calculate molecular descriptors
+    descriptors_list = []
+    for index, row in data.iterrows():
+        smiles = row['SMILES']
+        descriptors = calculate_descriptors(smiles)
+        if descriptors:
+            descriptors_list.append(descriptors)
+        else:
+            print(f"Invalid SMILES string: {smiles}")
+
+    # Create a DataFrame from the descriptors list
+    descriptors_df = pd.DataFrame(descriptors_list)
+    
+    # Concatenate the original data with the descriptors
+    data = pd.concat([data, descriptors_df], axis=1)
     
     # Preprocess the data
     preprocessed_data, label_encoders = preprocess_data(data)
