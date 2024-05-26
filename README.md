@@ -42,6 +42,10 @@ https://aspire10x.com/data-solutions/
   |   |- evaluate_molecules.py
   |- data/
   |   |- dataset.csv
+         preprocessed_dataset.csv
+        features_array.npy ( result of train_molgan.py)
+        adj_array.npy   ( result of train_molgan.py)
+  
   |- docs/
   |   |- user_manual.md
   |   |- api_documentation.md
