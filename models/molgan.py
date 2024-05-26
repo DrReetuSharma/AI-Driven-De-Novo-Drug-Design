@@ -1,3 +1,4 @@
+#This file contains the definitions of the Generator and Discriminator models
 import torch
 import torch.nn as nn
 
