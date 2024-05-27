@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: uvicorn src.api:app --host 0.0.0.0 --port 8000
+
+  # Add other services as needed
+  # For example, a database service:
+  # db:
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_USER: myuser
+  #     POSTGRES_PASSWORD: mypassword
+  #     POSTGRES_DB: mydatabase
+  #   ports:
+  #     - "5432:5432"
