@@ -60,6 +60,14 @@ https://aspire10x.com/data-solutions/
   |- contrib/
       |- contribution_guidelines.md
 
+
+preprocess_data.py input data/preprocessed_dataset.csv  output:adj_array.npy, feature_array.npy ( smiles to graph)
+train_molgan.py   input:.npy  output:  generated_molecules_df.to_csv('data/generated_molecules.csv', index=False)
+src/train_rl.py input: models/generator_final.pth  models/discriminator_final.pth
+
+
+ 
+
 ## Contact/correspondance:
 For any inquiries or feedback, please contact sharmar@aspire10x.com.
 https://aspire10x.com/data-solutions/
