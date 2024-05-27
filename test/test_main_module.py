@@ -20,3 +20,10 @@ class TestMyClass(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+# We define a TestMainFunction class to test the main_function() function from the mymodule module. Inside this class, we have a test method test_main_function() that checks the behavior of main_function() with different inputs.
+
+# We also define a TestMyClass class to test the method() method of the MyClass class from the mymodule module. Inside this class, we have a test method test_myclass_method() that checks the behavior of method() with different inputs.
+
+# At the end of the file, we use unittest.main() to run the tests when the script is executed directly.
+
+# Make sure to replace mymodule with the actual name of your main module, and adjust the test cases according to the functionality of your module.
