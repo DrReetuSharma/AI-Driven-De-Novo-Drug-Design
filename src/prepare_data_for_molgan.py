@@ -1,7 +1,6 @@
 """
 Convert SMILES to graph and prepare adjacency matrix (in the form of array) using rdmolops and feature matrix 
 (atomic numbers, molwt, logp, tsra, num_rotational bond, hydrogenbond donars and acceptors)
-
 """
 
 import pandas as pd
